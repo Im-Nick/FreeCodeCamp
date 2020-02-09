@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 const bank = {
     keys : [{
       keyCode: 81,
@@ -59,6 +60,7 @@ const keyArr = () => {
     })
     return arr;
 }
+
 ReactDOM.render(<App  bank={bank} keysArr={keyArr()}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

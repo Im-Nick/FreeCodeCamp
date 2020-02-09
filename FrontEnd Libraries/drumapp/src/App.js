@@ -11,6 +11,7 @@ class App extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleClick = this.handleClick.bind(this)
   }
+  
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyPress);
   }
@@ -62,24 +63,24 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-        <h1>FreeCode Camp</h1>
-        <div className="btn-group">
-          <button value='81' onClick={this.handleClick} className="button">Q</button>
-          <button value='87' onClick={this.handleClick} className="button">W</button>
-          <button value='69' onClick={this.handleClick} className="button">E</button>
-        </div>
-        <div className="btn-group">
-          <button value='65' onClick={this.handleClick} className="button">A</button>
-          <button value='83' onClick={this.handleClick} className="button">S</button>
-          <button value='68' onClick={this.handleClick} className="button">D</button>
-        </div>
-        <div className="btn-group">
-          <button value='90' onClick={this.handleClick} className="button">Z</button>
-          <button value='88' onClick={this.handleClick} className="button">X</button>
-          <button value='67' onClick={this.handleClick} className="button">C</button>
-        </div>
-        <div style={{paddingTop: "1em"}}>{this.state.id}
-        </div>
+          <h1>FreeCode Camp</h1>
+          <div className="btn-group">
+            <button value='81' onClick={this.handleClick} className="button">Q</button>
+            <button value='87' onClick={this.handleClick} className="button">W</button>
+            <button value='69' onClick={this.handleClick} className="button">E</button>
+          </div>
+          <div className="btn-group">
+            <button value='65' onClick={this.handleClick} className="button">A</button>
+            <button value='83' onClick={this.handleClick} className="button">S</button>
+            <button value='68' onClick={this.handleClick} className="button">D</button>
+          </div>
+          <div className="btn-group">
+            <button value='90' onClick={this.handleClick} className="button">Z</button>
+            <button value='88' onClick={this.handleClick} className="button">X</button>
+            <button value='67' onClick={this.handleClick} className="button">C</button>
+          </div>
+          <div style={{paddingTop: "1em"}}>{this.state.id}
+          </div>
         </header>
       </div>
     );
