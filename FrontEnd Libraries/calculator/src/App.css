@@ -1,0 +1,112 @@
+/* Custom CSS */
+* {
+  box-sizing: border-box;
+}
+
+.calculator-box {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px solid #111;
+  border-radius: 5px;
+}
+
+.calculator-box h5 {
+  font-size: 12px;
+  padding-top: 1em;
+  color: #2C3A47;
+}
+
+.primary-input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  border-bottom: 2px solid #111;
+  padding: 20px;
+  text-align: right;
+  font-size: 40px;
+}
+
+.secondary-input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  padding: 5px;
+  text-align: right;
+  font-size: 20px;
+}
+
+.calculator-buttons {
+  padding: 20px;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  grid-gap: 15px;
+}
+
+
+.clear,
+.zero {
+  grid-column: span 3;
+}
+
+.clear {
+  background-color: #2d3436;
+}
+
+.equal {
+  background-color: #2d3436
+}
+
+.zero {
+  background-color: #2C3A47;
+}
+button {
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid #111;
+  padding: 20px;
+  color: #EEE;
+  border-radius: 50px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Prefab Css */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
