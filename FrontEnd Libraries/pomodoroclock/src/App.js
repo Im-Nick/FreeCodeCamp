@@ -19,6 +19,7 @@ class App extends React.Component {
     this.stopTimer = this.stopTimer.bind(this);
     this.timer = this.timer.bind(this);
     this.setBreak = this.setBreak.bind(this)
+    this.reset = this.reset.bind(this)
   } 
 
 
@@ -27,6 +28,7 @@ class App extends React.Component {
     if (event.target.value === "up" && this.state.break >= 0) this.setState({break: this.state.break + 1})
     if (event.target.value === "down" && this.state.break > 0) this.setState({break: this.state.break - 1})
   }
+
   // Change minutes
   setTime(event) {
     if (event.target.value === "up" && this.state.minutes >= 0) this.setState({minutes: this.state.minutes + 1})
@@ -38,7 +40,7 @@ class App extends React.Component {
   setupTimer() {
     if (this.state.seconds === "00") this.setState({seconds: 0})
     if (this.state.active === true) return;
-
+    if (this.state.minutes === 0 && this.state.seconds == 0) {alert ("Can't do it!"); return};
     this.setState({
       active: true
     })
@@ -47,13 +49,28 @@ class App extends React.Component {
       this.timer();
     },1)
   }
+  
+  reset() {
+    this.setState({
+      minutes: 24,
+      seconds: 59,
+      break: 0,
+      active: false
+    })
+  }
 
   // Timer Start
   timer() {
     if (this.state.seconds === 0) {
+
       setInterval(() => {
+        if (this.state.minutes === "00" && this.state.seconds == "00") {alert ("Finish!"); this.reset(); return};
         if (this.state.active === false) return;
-        if (this.state.seconds <= 0) { this.setState({minutes : (this.state.minutes - 1),seconds : 60})};
+        if (this.state.seconds <= 0) { 
+        (this.state.minutes < 11 && this.state.minutes > 0) 
+        ? this.setState({minutes : '0' + (this.state.minutes - 1),seconds : 60})
+        : this.setState({minutes : (this.state.minutes - 1),seconds : 60}); 
+        };
 
         if (this.state.seconds < 11 && this.state.seconds > 0) { 
           this.setState(prev => ({seconds: '0' + (prev.seconds - 1)}));
@@ -61,6 +78,7 @@ class App extends React.Component {
           this.setState(prev => ({seconds: prev.seconds - 1}));
         }
       },1000);
+
       setTimeout(() => {
         if (this.state.active === false) return;
         if (this.state.break === 0) return;
@@ -71,7 +89,6 @@ class App extends React.Component {
       },(this.state.break * 60) * 1000);
     }
   }
-
 
   // Func for stop timer
   stopTimer() {
