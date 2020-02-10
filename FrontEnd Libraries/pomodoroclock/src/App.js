@@ -40,7 +40,7 @@ class App extends React.Component {
   setupTimer() {
     if (this.state.seconds === "00") this.setState({seconds: 0})
     if (this.state.active === true) return;
-    if (this.state.minutes === 0 && this.state.seconds == 0) {alert ("Can't do it!"); return};
+    if (this.state.minutes === 0 && this.state.seconds === 0) {alert ("Can't do it!"); return};
 
     this.setState({
       active: true
@@ -56,7 +56,7 @@ class App extends React.Component {
     if (this.state.seconds === 0) {
 
       setInterval(() => {
-        if (this.state.minutes === "00" && this.state.seconds == "00") {alert ("Finish!"); this.reset(); return};
+        if (this.state.minutes === "00" && this.state.seconds === "00") {alert ("Finish!"); this.reset(); return};
         if (this.state.active === false) return;
         if (this.state.seconds <= 0) { 
         (this.state.minutes < 11 && this.state.minutes > 0) 
