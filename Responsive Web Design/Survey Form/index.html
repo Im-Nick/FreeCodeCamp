@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="top-div">
+			<h1> Welcome to a survey</h1>
+		</div>
+		<div class="mid-div">
+			<p class="mylabel">Name</p><br>
+			<input placeholder="Enter your name" class="textbox" type="text"></input>
+			<p class="mylabel">Email</p><br>
+			<input placeholder="Enter your email" class="textbox" type="text"></input>
+			<p class="mylabel">Age(Optional)</p><br>
+			<input min="10" max="90" type="number" placeholder="Your age" class="textbox" ></input>
+			<p class="mylabel">Role</p><br>
+			<select name="role" class="selectbox" required="">
+			<option disabled="" selected="" value="">Select current role</option>
+			<option value="student">Student</option>
+			<option value="job">Full Time Job</option>
+			<option value="learner">Full Time Learner</option>
+			<option value="preferNo">Prefer not to say</option>
+			<option value="other">Other</option>
+			</select>
+			<p class="mylabel">Do you reccomand freeCodeCamp?</p><br>
+			<label class="container">Sure
+				<input name="user" value="def" type="radio" class="checkmark" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Mh
+				<input name="user" value="mh" type="radio" class="checkmark">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Nah
+				<input name="user" value="nosu" type="radio" class="checkmark">
+				<span class="checkmark"></span>
+			</label>
+			<p class="mylabel">What would you like to see improved?</p>
+			<label class="container">One
+  				<input type="checkbox" checked="checked">
+  				<span class="checkmark"></span>
+			</label>
+			<label class="container">Two
+			  <input type="checkbox">
+			  <span class="checkmark"></span>
+			</label>
+			<label class="container">Three
+			  <input type="checkbox">
+			  <span class="checkmark"></span>
+			</label>
+			<label style="padding-bottom:1em" class="container">Four
+			  <input type="checkbox">
+			  <span class="checkmark"></span>
+			</label>
+			<p class="mylabel">Leave a comment :)</p>
+			<textarea style="width: 80%; height: 15em" placeholder="leave a comment!"></textarea><br />
+
+			<button style="width: 80.7%; text-align: center; height: 3em; background-color: #2980b9; border: none;margin-bottom: 5em;margin-top: 2em "> Submit </button>
+		</div>
+	</body>
+</html>
