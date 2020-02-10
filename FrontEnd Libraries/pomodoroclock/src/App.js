@@ -41,6 +41,7 @@ class App extends React.Component {
     if (this.state.seconds === "00") this.setState({seconds: 0})
     if (this.state.active === true) return;
     if (this.state.minutes === 0 && this.state.seconds == 0) {alert ("Can't do it!"); return};
+
     this.setState({
       active: true
     })
@@ -48,15 +49,6 @@ class App extends React.Component {
     setTimeout(() => {
       this.timer();
     },1)
-  }
-  
-  reset() {
-    this.setState({
-      minutes: 24,
-      seconds: 59,
-      break: 0,
-      active: false
-    })
   }
 
   // Timer Start
@@ -96,7 +88,16 @@ class App extends React.Component {
       active: false
     })
   }
-
+  
+  // Reset all
+  reset() {
+    this.setState({
+      minutes: 24,
+      seconds: 59,
+      break: 0,
+      active: false
+    })
+  }
 
   render() {
     return (
